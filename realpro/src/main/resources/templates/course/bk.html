@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html  layout:decorate="~{fragments/layout}">
+<head>
+<title>Page Title</title>
+
+<style>
+	
+	.course-pro {
+		padding-bottom: 25px;
+	}
+	
+</style>
+
+</head>
+<body>
+<div layout:fragment="content">	
+		
+  		<div class="row course-pro">
+			  <div class="col-sm-6" style="height: 200px;">
+				  <div class="row" style="background-color: #6db33f; margin-right: 2px;">
+					
+					<div class="col-sm-4">
+						<div class="row">
+							<div>
+								<img th:src="@{/images/ecommerce.jpg}" class="d-block w-100" alt="...">	
+							</div>
+						</div>
+						<div class="row">
+							<div>
+								<img th:src="@{/images/springjava.PNG}" class="d-block w-100" alt="...">								
+							</div>							
+						</div>
+					
+					</div>
+					
+					<div class="col-sm-8">
+						<div style="width: 100%; padding-bottom: 20px; text-align: center;">
+				  			<span style="font-size: 22px; color: white; font-weight: bold;">
+								  Real e-commerce project
+							</span>	</br>
+				  			<span style="width: 100%; text-align: center; color: red; font-weight: bold; font-size: 18px;" >
+								  Price: 299$
+							</span>							
+						</div>
+
+						<div >
+							<span>Download full source code</span></br>
+				  			<span>Video + Guides</span></br>	
+				  			<span>Java 11+, Spring boot, Mysql</span>		
+						</div>
+				  			
+				  		<div style="text-align: right;">
+<!--							  <button type="button" class="btn btn-info btn-outline-primary">View detail</button>-->
+							  <a th:href="@{/course/ecommerce_java}" class="btn btn-info btn-outline-primary">View detail</a>
+						</div>				
+					</div>
+
+				  </div>
+			  </div>
+			  
+			  <div class="col-sm-6" style="height: 200px;">
+				  
+				  <div class="row" style="background-color: #44B78B; margin-left: 2px;">
+					<div class="col-sm-4" style="margin-left: -12px;">
+						<div class="row">
+							<div>
+								<img th:src="@{/images/ecommerce.jpg}" class="d-block w-100" alt="...">	
+							</div>
+						</div>
+						<div class="row">
+							<div>
+								<img th:src="@{/images/springjava.PNG}" class="d-block w-100" alt="...">								
+							</div>							
+						</div>
+					</div>
+					
+					<div class="col-sm-8">
+						<div style="width: 100%; padding-bottom: 20px; text-align: center;">
+				  			<span style="font-size: 22px; color: white; font-weight: bold;">
+								  Real e-commerce project
+							</span>	</br>
+				  			<span style="width: 100%; text-align: center; color: red; font-weight: bold; font-size: 18px;" >
+								  Price: 299$
+							</span>							
+						</div>
+
+						<div >
+							<span>Download full source code</span></br>
+				  			<span>Video + Guides</span></br>	
+				  			<span>Pythonh XX+, Diango, Mysql</span>		
+						</div>
+				  			
+				  		<div style="text-align: right;">
+<!--							  <button type="button" class="btn btn-info btn-outline-primary">View detail</button>-->
+							  <a th:href="@{/course/ecommerce_python}" class="btn btn-info btn-outline-primary">View detail</a>
+						</div>			
+					</div>
+
+				  </div>				
+				  
+			  </div>
+		</div>		
+
+  		<div class="row course-pro">
+			  <div class="col-sm-6" style="height: 200px;">
+				  <div class="row" style="background-color: #6db33f; margin-right: 2px;">
+					
+					
+					<div >
+						<div style="width: 100%; padding-bottom: 20px; text-align: center;">
+				  			<span style="font-size: 22px; color: white; font-weight: bold;">
+								 Oracle Certified Professional Java SE 17 (1z0-829)
+							</span>	</br>
+				  			<span style="width: 100%; text-align: center; color: red; font-weight: bold; font-size: 18px;" >
+								  Price: 39$
+							</span>							
+						</div>
+
+						<div >
+							<span>Real Oracle 1z0-829 Exam</span></br>
+				  			<span>50 question</span></br>	
+				  			<span>Download PDF file</span>		
+						</div>
+				  			
+				  		<div style="text-align: right;">
+							  <a th:href="@{/course/downloadFile?filename=1z0829}" class="btn btn-info btn-outline-primary">Free dowload</a>
+							  <a th:href="@{/payment/checkout/course/1z0-829?discountCode=xxxx}" class="btn btn-info btn-outline-primary">Buy full PDF</a>
+						</div>				
+					</div>
+
+				  </div>
+			  </div>
+			  
+			  <div class="col-sm-6" style="height: 200px;">
+				  
+				  <div class="row" style="background-color: #44B78B; margin-left: 2px;">
+
+					<div class="">
+						<div style="width: 100%; padding-bottom: 20px; text-align: center;">
+				  			<span style="font-size: 22px; color: white; font-weight: bold;">
+								  PCAP: Certified Associate in Python
+							</span>	</br>
+				  			<span style="width: 100%; text-align: center; color: red; font-weight: bold; font-size: 18px;" >
+								  Price: 39$
+							</span>							
+						</div>
+
+						<div >
+							<span>Real PCAP Exam</span></br>
+				  			<span>145 question</span></br>	
+				  			<span>Download PDF file</span>			
+						</div>
+				  			
+				  		<div style="text-align: right;">
+							  <a th:href="@{/course/downloadFile?filename=PCAP}" class="btn btn-info btn-outline-primary">Free dowload</a>
+							  <a th:href="@{/payment/checkout/course/PCAP?discountCode=xxxx}" class="btn btn-info btn-outline-primary">Buy full PDF</a>
+						</div>			
+					</div>
+
+				  </div>				
+				  
+			  </div>
+		</div>
+
+  		<div class="row course-pro">
+			   <div class="col-sm-6" style="height: 200px;"></div>
+			  <div class="col-sm-6" style="height: 200px;">
+				  <div class="row" style="background-color: #6db33f; margin-right: 2px;">
+				
+					<div class="">
+						<div style="width: 100%; padding-bottom: 20px; text-align: center;">
+				  			<span style="font-size: 22px; color: white; font-weight: bold;">
+								  PCPP-32-101: Certified Professional in Python
+							</span>	</br>
+				  			<span style="width: 100%; text-align: center; color: red; font-weight: bold; font-size: 18px;" >
+								  Price: 39$
+							</span>							
+						</div>
+
+						<div >
+							<span>Real PCPP-32-101 Exam</span></br>
+				  			<span>50 question</span></br>	
+				  			<span>Download PDF file</span>			
+						</div>
+				  			
+				  		<div style="text-align: right;">
+							  <a th:href="@{/course/downloadFile?filename=PCPP_32_101}" class="btn btn-info btn-outline-primary">Free dowload</a>
+							  <a th:href="@{/payment/checkout/course/PCPP_32_101?discountCode=xxxx}" class="btn btn-info btn-outline-primary">Buy full PDF</a>
+						</div>				
+					</div>
+
+				  </div>
+			  </div>
+			  
+		</div>		
+</div>
+</body>
+</html>

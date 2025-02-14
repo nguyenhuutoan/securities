@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html layout:decorate="~{course/fragments/layout}">
+
+<head>
+	<title>Page Title</title>
+
+	<style>
+		.course-pro {
+			padding-bottom: 25px;
+		}
+
+		.block-course {
+			padding-bottom: 30px;
+		}
+
+
+		.lecture-page-layout {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			min-height: unset;
+			height: calc(100vh - 71px);
+			overflow: scroll;
+
+		}
+
+		.revamped_lecture_player .course-sidebar {
+			width: 350px;
+			height: 100%;
+			overflow: auto;
+			box-shadow: 0px 6px 20px rgba(32, 39, 45, 0.15);
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+
+		.revamped_lecture_player .course-sidebar-head {
+			background-color: var(--linen)
+		}
+
+		.revamped_lecture_player .course-sidebar h2 {
+			padding-left: 25px;
+			padding-right: 25px;
+			padding-top: 25px;
+			margin-top: 0;
+			font-size: 1.125rem;
+			line-height: 1.688rem;
+			font-weight: 600;
+		}
+
+		.revamped_lecture_player .course-sidebar .row.lecture-sidebar .course-section {
+			margin-bottom: 20px;
+			padding-right: 0px;
+		}
+
+		.revamped_lecture_player .course-section .section-title {
+			background: white;
+			padding: 10px 16px;
+			margin: 0;
+			font-size: 1rem;
+			line-height: 1.5rem;
+			font-weight: 600;
+			border-bottom: 1px solid #fff
+		}
+
+		.revamped_lecture_player .course-sidebar .row.lecture-sidebar .course-section {
+			margin-bottom: 20px;
+			padding-right: 0px;
+		}
+
+		.revamped_lecture_player .course-section ul.section-list .section-item.next-lecture .item {
+			color: #333;
+			background-color: #ebf5ed
+		}
+
+		.revamped_lecture_player .course-section ul.section-list .section-item .item {
+			display: flex;
+			align-items: center;
+			padding: 0px;
+			background-color: #e3e3e3;
+			list-style-type: none;
+			font-size: 0.889rem;
+			line-height: 1.333rem;
+			font-weight: 400;
+			color: #4d4d4d;
+			text-decoration: none
+		}
+
+		.course-section ul.section-list .section-item.next-lecture .item {
+			color: #333;
+			background: #e1ede4;
+		}
+
+		.revamped_lecture_player .course-section ul.section-list .section-item.incomplete .item:hover {
+			background-color: #ebf5ed;
+		}
+
+		.revamped_lecture_player .course-section ul.section-list .section-item .status-container {
+			float: left;
+			height: auto;
+			margin: 0;
+			padding: 16px;
+		}
+
+		.revamped_lecture_player .course-section ul.section-list .section-item.incomplete .status-icon {
+			background: none;
+			box-shadow: inset 0px 0px 0px 2px #63b175;
+		}
+
+		.revamped_lecture_player .course-section ul.section-list .section-item .status-icon {
+			width: 20px;
+			height: 20px;
+			float: left;
+			border-radius: 14px;
+		}
+
+		.revamped_lecture_player .course-section ul.section-list {
+			margin: 0;
+			padding: 0;
+		}
+		
+		.revamped_lecture_player .course-section ul.section-list .section-item .item .lecture-icon {
+    padding-right: 8px;
+    display: inline-flex;
+}
+		svg:not(:root) {
+    overflow: hidden
+}
+
+html body .v-middle {
+    vertical-align: middle;
+}
+	</style>
+
+	<script>
+
+
+		$(document).ready(function () {
+			$("#testid").click(function () {
+				//history.pushState({ msg: 'Hi!' }, '', '/course/java/ecommerce/12345323');
+
+				openURL($(this).attr("href"));
+				return false; //intercept the link
+			});
+
+
+		});
+
+		function openURL(href) {
+
+			var link = href;  //$(this).attr('href');                                    
+			$.ajax({
+				url: link,
+				type: 'GET',
+				cache: false,
+				success: function (result) {
+					$('#target').html(result);
+				}
+			});
+			window.history.pushState({href: href}, '', href);
+		}
+
+	</script>
+
+</head>
+
+<body class="revamped_lecture_player">
+
+	
+	
+	<div layout:fragment="content" style=" margin-top: 50px;">
+		
+	<div style="display: block;">
+		<defs>
+			<clipPath id="clip0_6_12384">
+				<rect width="24" height="24" fill="currentColor"></rect>
+			</clipPath>
+	
+			<clipPath id="clip0_945_92440">
+				<rect width="24" height="24" fill="white"></rect>
+			</clipPath>
+	
+			<clipPath id="clip0_6_16054">
+				<rect width="24" height="24" fill="CurrentColor"></rect>
+			</clipPath>
+	
+			<clipPath id="clip0_6_16141">
+				<rect width="24" height="24" fill="white"></rect>
+			</clipPath>
+	
+			<clipPath id="clip0_11_5419">
+				<rect width="24" height="24" fill="white"></rect>
+			</clipPath>
+	
+			<clipPath id="clip0_6_16136">
+				<rect width="24" height="24" fill="white"></rect>
+			</clipPath>
+		</defs>
+		<svg style="width: 0; height: 0; position: absolute;">
+			<symbol id="icon__Subject" viewBox="0 0 24 24">
+				<path d="M14 17H4V19H14V17ZM20 9H4V11H20V9ZM4 15H20V13H4V15ZM4 5V7H20V5H4Z" fill="currentColor"></path>
+			</symbol>
+		</svg>
+	</div>		
+		
+		
+		
+		
+		<section class="lecture-page-layout">
+			<div class="course-sidebar">
+
+				<div class="course-sidebar-head">
+					<h2>Ecommerce web class</h2>
+				</div>
+
+				<div class="row lecture-sidebar">
+					<div class="col-sm-12 course-section">
+						<div class="section-title">
+							<span>Set up environment</span>
+						</div>
+						<ul class="section-list">
+							<li class="section-item incomplete next-lecture">
+								<a class="item">
+									<span class="status-container">
+										<span class="status-icon"> </span>
+									</span>
+									<div class="title_container">
+										<span class="lecture-icon v-middle">
+											<svg width="24" height="24">
+												<use xlink:href="#icon__Subject"></use>
+											</svg>
+										</span>
+										<span class="lecture_name">Cài đật JAVA</span>
+									</div>
+								</a>
+							</li>
+							
+							<li class="section-item incomplete next-lecture">
+								<a class="item">
+									<span class="status-container">
+										<span class="status-icon"> </span>
+									</span>
+									<div class="title_container">
+										<span class="lecture-icon v-middle">
+											<svg width="24" height="24">
+												<use xlink:href="#icon__Subject"></use>
+											</svg>
+										</span>
+										<span class="lecture_name">Cài đạt mysql</span>
+									</div>
+								</a>
+							</li>							
+
+						</ul>
+					</div>
+				</div>
+				
+				<!-- Config ung dung: start -->
+				<div class="row lecture-sidebar">
+					<div class="col-sm-12 course-section">
+						<div class="section-title">
+							<span>Config application</span>
+						</div>
+						<ul class="section-list">
+							<li class="section-item incomplete next-lecture">
+								<a class="item">
+									<span class="status-container">
+										<span class="status-icon"> </span>
+									</span>
+									<div class="title_container">
+										<span class="lecture-icon v-middle">
+											<svg width="24" height="24">
+												<use xlink:href="#icon__Subject"></use>
+											</svg>
+										</span>
+										<span class="lecture_name">Tạo ứng dụng từ initializer</span>
+									</div>
+								</a>
+							</li>
+							
+							<li class="section-item incomplete next-lecture">
+								<a class="item">
+									<span class="status-container">
+										<span class="status-icon"> </span>
+									</span>
+									<div class="title_container">
+										<span class="lecture-icon v-middle">
+											<svg width="24" height="24">
+												<use xlink:href="#icon__Subject"></use>
+											</svg>
+										</span>
+										<span class="lecture_name">Config log4j</span>
+									</div>
+								</a>
+							</li>
+							
+							<li class="section-item incomplete next-lecture">
+								<a class="item">
+									<span class="status-container">
+										<span class="status-icon"> </span>
+									</span>
+									<div class="title_container">
+										<span class="lecture-icon v-middle">
+											<svg width="24" height="24">
+												<use xlink:href="#icon__Subject"></use>
+											</svg>
+										</span>
+										<span class="lecture_name">Config integrate database</span>
+									</div>
+								</a>
+							</li>														
+
+						</ul>
+					</div>
+				</div>				
+				<!-- Config ung dung: end -->
+				
+				
+				<!-- Build layout master inthymleaf: start -->
+				<div class="row lecture-sidebar">
+					<div class="col-sm-12 course-section">
+						<div class="section-title">
+							<span>Build layout master in thymleaf</span>
+						</div>
+						<ul class="section-list">
+							<li class="section-item incomplete next-lecture">
+								<a class="item">
+									<span class="status-container">
+										<span class="status-icon"> </span>
+									</span>
+									<div class="title_container">
+										<span class="lecture-icon v-middle">
+											<svg width="24" height="24">
+												<use xlink:href="#icon__Subject"></use>
+											</svg>
+										</span>
+										<span class="lecture_name">Introduce thymleaf</span>
+									</div>
+								</a>
+							</li>
+							
+							<li class="section-item incomplete next-lecture">
+								<a class="item">
+									<span class="status-container">
+										<span class="status-icon"> </span>
+									</span>
+									<div class="title_container">
+										<span class="lecture-icon v-middle">
+											<svg width="24" height="24">
+												<use xlink:href="#icon__Subject"></use>
+											</svg>
+										</span>
+										<span class="lecture_name">Add kibrary an config with spring boot 3</span>
+									</div>
+								</a>
+							</li>
+							
+							<li class="section-item incomplete next-lecture">
+								<a class="item">
+									<span class="status-container">
+										<span class="status-icon"> </span>
+									</span>
+									<div class="title_container">
+										<span class="lecture-icon v-middle">
+											<svg width="24" height="24">
+												<use xlink:href="#icon__Subject"></use>
+											</svg>
+										</span>
+										<span class="lecture_name">Tạo master page layout</span>
+									</div>
+								</a>
+							</li>														
+
+						</ul>
+					</div>
+				</div>				
+				<!-- Build layout master inthymleaf: end -->
+				
+				
+				<!-- Design database: start -->
+				<div class="row lecture-sidebar">
+					<div class="col-sm-12 course-section">
+						<div class="section-title">
+							<span>Design database</span>
+						</div>
+						<ul class="section-list">
+							<li class="section-item incomplete next-lecture">
+								<a class="item">
+									<span class="status-container">
+										<span class="status-icon"> </span>
+									</span>
+									<div class="title_container">
+										<span class="lecture-icon v-middle">
+											<svg width="24" height="24">
+												<use xlink:href="#icon__Subject"></use>
+											</svg>
+										</span>
+										<span class="lecture_name">Design table authenticate and authorite</span>
+									</div>
+								</a>
+							</li>
+							<li class="section-item incomplete next-lecture">
+								<a class="item">
+									<span class="status-container">
+										<span class="status-icon"> </span>
+									</span>
+									<div class="title_container">
+										<span class="lecture-icon v-middle">
+											<svg width="24" height="24">
+												<use xlink:href="#icon__Subject"></use>
+											</svg>
+										</span>
+										<span class="lecture_name">Design table shoping cart</span>
+									</div>
+								</a>
+							</li>	
+							
+							<li class="section-item incomplete next-lecture">
+								<a class="item">
+									<span class="status-container">
+										<span class="status-icon"> </span>
+									</span>
+									<div class="title_container">
+										<span class="lecture-icon v-middle">
+											<svg width="24" height="24">
+												<use xlink:href="#icon__Subject"></use>
+											</svg>
+										</span>
+										<span class="lecture_name">Design table product</span>
+									</div>
+								</a>
+							</li>													
+
+						</ul>
+					</div>
+				</div>					
+				<!-- Design database: end -->
+				
+				
+				<!-- Design security: start -->
+				<div class="row lecture-sidebar">
+					<div class="col-sm-12 course-section">
+						<div class="section-title">
+							<span>Design security</span>
+						</div>
+						<ul class="section-list">
+							<li class="section-item incomplete next-lecture">
+								<a class="item">
+									<span class="status-container">
+										<span class="status-icon"> </span>
+									</span>
+									<div class="title_container">
+										<span class="lecture-icon v-middle">
+											<svg width="24" height="24">
+												<use xlink:href="#icon__Subject"></use>
+											</svg>
+										</span>
+										<span class="lecture_name">666 dat de di ia abc dat d di choi</span>
+									</div>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>					
+				<!-- Design security:: end -->	
+				
+				<!-- Search: start -->
+				<div class="row lecture-sidebar">
+					<div class="col-sm-12 course-section">
+						<div class="section-title">
+							<span>Search</span>
+						</div>
+						<ul class="section-list">
+							<li class="section-item incomplete next-lecture">
+								<a class="item">
+									<span class="status-container">
+										<span class="status-icon"> </span>
+									</span>
+									<div class="title_container">
+										<span class="lecture-icon v-middle">
+											<svg width="24" height="24">
+												<use xlink:href="#icon__Subject"></use>
+											</svg>
+										</span>
+										<span class="lecture_name">666 dat de di ia abc dat d di choi</span>
+									</div>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>					
+				<!-- Search :: end -->
+				
+				<!-- paging: start -->
+				<div class="row lecture-sidebar">
+					<div class="col-sm-12 course-section">
+						<div class="section-title">
+							<span>paging</span>
+						</div>
+						<ul class="section-list">
+							<li class="section-item incomplete next-lecture">
+								<a class="item">
+									<span class="status-container">
+										<span class="status-icon"> </span>
+									</span>
+									<div class="title_container">
+										<span class="lecture-icon v-middle">
+											<svg width="24" height="24">
+												<use xlink:href="#icon__Subject"></use>
+											</svg>
+										</span>
+										<span class="lecture_name">paging dat de di ia abc dat d di choi</span>
+									</div>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>				
+				<!-- paging :: end -->
+				
+				<!-- Shoppong: start -->
+				
+				<!-- Shoppong :: end -->
+				
+												
+
+			</div>
+
+			<div class="">
+
+				Body là o đay chứ đâu
+				Tao lao
+				<a id="testid" th:href="@{/course/java/ecommerce/12345323}">tona</a>
+			</div>
+
+
+		</section>
+	</div>
+</body>
+
+</html>

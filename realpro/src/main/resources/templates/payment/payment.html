@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html layout:decorate="~{fragments/layout}">
+
+<head>
+	<title>Page Title</title>
+
+	<script>
+		$(document).ready(function () {
+			$("#radio_paypal").click(function () {
+				// $('#paypal_block_detail').css('display', 'block');
+				$('#card_block_detail').css('display', 'none');
+			});
+			$("#radio_card").click(function () {
+				$('#card_block_detail').css('display', 'block');
+				$('#paypal_block_detail').css('display', 'none');
+			});
+		});
+	</script>
+
+	<style>
+		.price_item {
+			display: flex;
+		}
+
+		.price_item span:first-child {
+			flex: 1;
+		}
+
+		.info_item_card span:first-child {
+			flex: 1;
+			font-weight: bold;
+		}
+		
+		.info_item_card {
+			padding-top: 10px;
+		}
+		
+		.block_card_type {
+			border: 1px solid #d1d7dc;
+			display: flex;
+			padding: 10px 0;
+		}
+			
+		.card_block_detail {
+			display: none; 
+			width: 70%;
+			padding-left: 10px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			
+		}
+		
+	</style>
+
+</head>
+
+<body>
+	<div layout:fragment="content">
+
+		<div class="row" style="">
+			<div class="col-md-7" style="background: #f5f6f7;">
+				<h1 style="margin: 1rem 0;">Checkout</h1>
+				<section>
+					<h2>Billing address</h2>
+					<div>
+						<div>
+							<label>Country</label>
+						</div>
+						<div style="max-width: 50%;">
+							<select class="form-select" aria-label="Default select example">
+								<option selected>Open this select menu</option>
+								<option value="1">One</option>
+								<option value="2">Two</option>
+								<option value="3">Three</option>
+							</select>
+						</div>
+					</div>
+
+					<!-- card info : start-->
+					<div style="margin-top: 30px;">
+						<h2>Payment method</h2>
+						<div style="background-color: white; margin-bottom: 50px; ">
+							<div class="block_card_type">
+
+								<div style="width: 1.2rem; height: 1.5rem;">
+									<input type="radio" id="radio_paypal" name="fav_language" value="CSS">
+								</div>
+								<img th:src="@{/images/payment/hpp-paypal.svg}"
+									style="max-width: 2.2rem; height: 1.5rem; margin-right: 24px;"></img>
+								<label for="html">Paypal</label>
+							</div>
+							<div id="paypal_block_detail" class="card_block_detail" style="display: none;">
+								<p>pay pal ne</p>
+							</div>
+
+<!--							<div style="border-bottom: 1px solid #d1d7dc;-->
+<!--					margin: 0.8rem 0"></div>-->
+
+							<div class="block_card_type">
+
+								<div style="width: 1.2rem; height: 1.5rem;">
+									<input type="radio" id="radio_card" name="fav_language" value="CSS">
+								</div>
+								<img th:src="@{/images/payment/card-default.svg}"
+									style="max-width: 2.2rem; height: 1.5rem; margin-right: 24px;"></img>
+								<label for="html">Credit/Debit Card</label>
+							</div>
+							<div id="card_block_detail" class="card_block_detail" >
+								<div>
+									<div>
+										<div class="info_item_card" style="display: flex; width: 100%;">
+											<span class="label_item_card">Name on card</span>
+											<span>Required</span>
+										</div>
+										<div>
+											<input type="text" class="form-control" placeholder="Name on card">
+										</div>
+									</div>
+									<div>
+										<div class="info_item_card" style="display: flex; width: 100%;">
+											<span class="label_item_card">Card number</span>
+											<span>Required</span>
+
+										</div>
+										<div>
+											<input type="text" class="form-control" placeholder="1234 4545 5656 4454">
+										</div>
+									</div>
+
+									<div>
+										<div class="info_item_card" style="display: flex; width: 100%;">
+											<div style="width: 48%;">
+												<div class="info_item_card" style="display: flex; width: 100%;">
+													<span class="label_item_card">Expiry date</span>
+													<span>Required</span>
+
+												</div>
+												<div>
+													<input type="text" class="form-control" placeholder="MM/YY">
+												</div>
+											</div>
+											<div style="width: 4%;"></div>
+											<div style="width: 48%;">
+												<div class="info_item_card" style="display: flex; width: 100%;">
+													<span class="label_item_card">CVC/CVV</span>
+													<span>Required</span>
+
+												</div>
+												<div>
+													<input type="text" class="form-control" placeholder="CVC">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+					<!-- card info : end-->
+
+				</section>
+			</div>
+			<div class="col-md-5">
+				<div style="padding-left: 20px; max-width: 22rem;">
+					<h2 style="margin-bottom: 25px; display: flex;">Summary</h2>
+					<div class="price_item">
+						<span>Original Price:</span>
+						<span>999$</span>
+					</div>
+
+					<div style="border-bottom: 1px solid #d1d7dc;
+					margin: 0.8rem 0"></div>
+
+					<div class="price_item" style="font-weight: 700;">
+						<span>Total:</span>
+						<span>₫1,899,000$</span>
+					</div>
+					<div style="margin-top: 20px;">
+						<div style="margin-bottom: 10px;">
+							<span>By completing your purchase you agree to these
+								<a href="#">Term of service</a>
+							</span>
+						</div>
+						<div>
+							<button class="btn btn-primary" style="width: 100%;">By the course </buton>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

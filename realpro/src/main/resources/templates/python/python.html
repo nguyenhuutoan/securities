@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html layout:decorate="~{fragments/layout}">
+
+<head>
+	<title>Page Title</title>
+
+	<style>
+
+		@media (max-width: 768px) {
+			.carousel-inner .carousel-item>div {
+				display: none;
+			}
+
+			.carousel-inner .carousel-item>div:first-child {
+				display: block;
+			}
+		}
+
+		.carousel-inner .carousel-item.active,
+		.carousel-inner .carousel-item-start,
+		.carousel-inner .carousel-item-next,
+		.carousel-inner .carousel-item-prev {
+			display: flex;
+		}
+
+		/* display 2 */
+		@media (min-width: 768px) {
+
+			.carousel-inner .carousel-item-right.active,
+			.carousel-inner .carousel-item-next,
+			.carousel-item-next:not(.carousel-item-start) {
+				transform: translateX(50%) !important;
+			}
+
+			.carousel-inner .carousel-item-left.active,
+			.carousel-item-prev:not(.carousel-item-end),
+			.active.carousel-item-start,
+			.carousel-item-prev:not(.carousel-item-end) {
+				transform: translateX(-50%) !important;
+			}
+
+			.carousel-item-next.carousel-item-start,
+			.active.carousel-item-end {
+				transform: translateX(0) !important;
+			}
+
+			.carousel-inner .carousel-item-prev,
+			.carousel-item-prev:not(.carousel-item-end) {
+				transform: translateX(-50%) !important;
+			}
+		}
+	</style>
+
+	<script>
+
+		$(document).ready(function () {
+			$('.carousel .carousel-item').each(function () {
+				var minPerSlide = 2;
+				var next = $(this).next();
+				if (!next.length) {
+					next = $(this).siblings(':first');
+				}
+				next.children(':first-child').clone().appendTo($(this));
+
+				for (var i = 0; i < minPerSlide; i++) {
+					next = next.next();
+					if (!next.length) {
+						next = $(this).siblings(':first');
+					}
+
+					next.children(':first-child').clone().appendTo($(this));
+				}
+			});
+		});
+
+	</script>
+
+</head>
+
+<body>
+	<div layout:fragment="content">
+
+		<!-- start -->
+		<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-inner">
+
+				<div class="carousel-item active">
+					<!--					<div class="row">-->
+					<div class="col-sm-6" style="height: 200px; padding-right: 10px;">
+						<div style=" width: 100%; height: 100%; background-color: #44B78B; border: 1px solid red;">
+							<div class="row">
+
+								<div class="col-sm-4">
+									<div class="row">
+										<div>
+											<img th:src="@{/images/ecommerce.jpg}" class="d-block w-100" alt="...">
+										</div>
+									</div>
+									<div class="row" style="overflow: hidden;">
+										<div>
+											<img th:src="@{/images/python.jpeg}" class="d-block w-100" alt="...">
+										</div>
+									</div>
+
+								</div>
+
+								<div class="col-sm-8">
+									<div style="padding-right: 10px;">
+
+										<div style="width: 100%; padding-bottom: 15px; text-align: center;">
+											<span style="font-size: 22px; color: white; font-weight: bold;">
+												Real e-commerce project
+											</span> </br>
+											<span
+												style="width: 100%; text-align: center; color: red; font-weight: bold; font-size: 18px;">
+												Price: 999$
+											</span>
+										</div>
+
+										<div style="padding-bottom: 5px;">
+											<span>Download full source code</span></br>
+											<span>Video + Guides</span></br>
+											<span>Pythonh XX+, Diango, Mysql</span>
+										</div>
+
+										<div style="text-align: right;">
+											<a th:href="@{/course/ecommerce_python}" class="btn btn-primary">View
+												detail</a>
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!--					</div>-->
+
+				</div>
+
+				<!--///-->
+				<div class="carousel-item">
+					<!--					<div class="row">-->
+
+					<div class="col-sm-6" style="height: 200px; padding-right: 10px;">
+						<div style="width: 100%; height: 100%;  border: 1px solid red;">
+							<div class="row">
+								<div class="col-sm-12">
+									<div style="width: 100%; padding-bottom: 15px; text-align: center;">
+										<span style="font-size: 22px; font-weight: bold;">
+											PCAP: Certified Associate in Python
+										</span> </br>
+										<span
+											style="width: 100%; text-align: center; color: red; font-weight: bold; font-size: 18px;">
+											Price: 39$
+										</span>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="row">
+								<div class="col-sm-4">
+									<div>
+										<img th:src="@{/images/OCPJSE17.jpg}" class="d-block w-100" alt="...">
+									</div>
+								</div>
+
+								<div class="col-sm-8">
+									<div style="padding-right: 10px;">
+										<div style="padding-bottom: 5px;">
+											<span>Real PCAP Exam</span></br>
+											<span>145 question</span></br>
+											<span>Download PDF file</span>
+										</div>
+
+										<div style="text-align: right;">
+											<a th:href="@{/course/downloadFile?filename=PCAP}"
+												class="btn btn-primary">Free
+												dowload</a>
+											<a th:href="@{/payment/checkout/course/PCAP?discountCode=xxxx}"
+												class="btn btn-primary">Buy full PDF</a>
+										</div>
+									</div>
+
+								</div>
+
+
+							</div>
+						</div>
+
+					</div>
+
+					<!--					</div>-->
+				</div>
+
+
+				<div class="carousel-item">
+					<!--					<div class="row">-->
+
+					<div class="col-sm-6" style="height: 200px; padding-right: 10px;">
+						<div style="width: 100%; height: 100%;  border: 1px solid red;">
+							<div class="row">
+								<div class="col-sm-12">
+									<div style="width: 100%; padding-bottom: 15px; text-align: center;">
+										<span style="font-size: 22px; font-weight: bold;">
+											PCPP-32-101: Certified Professional in Python
+										</span> </br>
+										<span
+											style="width: 100%; text-align: center; color: red; font-weight: bold; font-size: 18px;">
+											Price: 39$
+										</span>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="row">
+								<div class="col-sm-4">
+									<div>
+										<img th:src="@{/images/OCPJSE17.jpg}" class="d-block w-100" alt="...">
+									</div>
+								</div>
+
+								<div class="col-sm-8">
+									<div style="padding-right: 10px;">
+										<div style="padding-bottom: 5px;">
+											<span>Real PCPP-32-101 Exam</span></br>
+											<span>50 question</span></br>
+											<span>Download PDF file</span>
+										</div>
+
+										<div style="text-align: right;">
+											<a th:href="@{/course/downloadFile?filename=PCPP_32_101}"
+												class="btn btn-primary">Free dowload</a>
+											<a th:href="@{/payment/checkout/course/PCPP_32_101?discountCode=xxxx}"
+												class="btn btn-primary">Buy full PDF</a>
+										</div>
+									</div>
+
+								</div>
+
+
+							</div>
+						</div>
+
+					</div>
+
+					<!--					</div>-->
+				</div>
+
+
+				<!--//-->
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+					data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+					data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

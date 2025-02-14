@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html layout:decorate="~{fragments/layout}">
+
+<head>
+<title>Page Title</title>
+<style>
+#core_img:before {
+	content: url(images/icons8-java-48.png) "\a";
+	white-space: pre-line;
+	display: flex;
+	padding-right: 12px;
+}
+
+#quiz_img:before {
+	content: url(images/icons8-quiz-48.png) "\a";
+	white-space: pre-line;
+	display: flex;
+	padding-right: 12px;
+}
+
+#advance_img:before {
+	content: url(images/icons8-advance-64.png) "\a";
+	white-space: pre-line;
+	display: flex;
+	padding-right: 12px;
+}
+
+#core_img {
+	text-align: center;
+	vertical-align: middle;
+	line-height: 48px;
+	margin: 0;
+}
+
+#quiz_img {
+	text-align: center;
+	vertical-align: middle;
+	line-height: 48px;
+	margin: 0;
+}
+
+#advance_img {
+	text-align: center;
+	vertical-align: middle;
+	line-height: 48px;
+	margin: 0;
+}
+
+.border_block_course {
+	border: 1px solid red;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-radius: 8px;
+	border: 1px solid #eaeaea;
+	box-shadow: 0 .5rem 0.8rem rgba(0, 0, 0, .2);
+}
+
+.border_block_course_main {
+	border-radius: 8px;
+	border: 1px solid #eaeaea;
+	/*box-shadow: 0 .5rem 1.2rem rgba(0,0,0,.2);*/
+}
+
+.border_block_course_level_1 {
+	padding-top: 65px;
+}
+
+.border_block_course_img {
+	background-size: contain;
+}
+
+.description_block_course p {
+	line-height: 20px;
+}
+
+.description_block_course {
+	padding-left: 20px;
+	padding-top: 20px;
+}
+
+.topic_common h4 {
+	color: #FFF4A3;
+	margin: 10px 0;
+}
+
+.topic_common {
+	background-color: rgb(62, 64, 74);
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 5px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	height: 137px;
+}
+
+.topic_common p {
+	color: white;
+}
+
+.border_separate {
+	border: 1px dashed rgb(62, 64, 74);
+	vertical-align: middle;
+}
+
+ul {
+	list-style-type: none;
+	/*margin-left: 10px;*/
+	padding: 0;
+}
+
+.style_icon_check {
+	color: orange;
+	font-size: 24px;
+}
+
+ul li::before {
+	padding-left: 20px;
+}
+
+.control_bottom {
+/* 	position: absolute; */
+	text-align: right;
+	margin-top: auto;
+	padding-right: 10px;
+	bottom: 5px;
+}
+
+.control_bottom .price {
+	padding-right: 5px;
+}
+</style>
+
+<script>
+	$(document).ready(
+			function() {
+				$(document).on('click', '.caret-icon', function() {
+					$(this).toggleClass('fa-caret-right fa-caret-down');
+				})
+
+				$(document).on(
+						'click',
+						'.btn-primary',
+						function() {
+							$(this).find(".caret-icon").toggleClass(
+									'fa-caret-right fa-caret-down');
+						})
+			});
+</script>
+
+</head>
+
+<body>
+	<div layout:fragment="content">
+
+		<!-- start -->
+		<div id="carouselExampleControls" class="carousel slide"
+			data-bs-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="border_block_course_main"
+								style="width: 100%; height: 100%; background-color: #6db33f;">
+								<div class="row">
+
+									<div class="col-sm-4">
+										<div class="row">
+											<div>
+												<img th:src="@{/images/ecommerce.jpg}" class="d-block w-100"
+													alt="...">
+											</div>
+										</div>
+										<div class="row" style="overflow: hidden;">
+											<div>
+												<img th:src="@{/images/springjava.PNG}"
+													class="d-block w-100" alt="...">
+											</div>
+										</div>
+
+									</div>
+
+									<div class="col-sm-8" style="display: flex; flex-direction: column;">
+										<div style="padding-right: 10px;">
+
+											<div style="padding-bottom: 15px; text-align: center;">
+												<span
+													style="font-size: 22px; color: white; font-weight: bold;">
+													Real e-commerce project </span>
+												<br/>
+												<span
+													style="font-size: 18px; color: white; font-weight: bold;">
+													(Monolithic architecture) </span>													
+											</div>
+
+											<div style="padding-bottom: 5px;">
+												<span>Download full source code</span></br> <span>Video +
+													Guides</span></br> <span>Java 17+, Spring boot, Mysql</span>
+											</div>
+
+											<div class="col-sm-8"
+												style="background-color: blue; text-align: right;">
+												<div class="control_bottom" style="background-color: red;">
+													<span class="price">Price: 99$</span> <a
+														th:href="@{/course/ecommerce_java}"
+														class="btn btn-primary">View detail</a>
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+
+								</div>
+
+								<!-- 								<div  class="row"> -->
+								<!-- 									<div class="col-sm-4"> -->
+								<!-- 											<div> -->
+								<!-- 												<img th:src="@{/images/springjava.PNG}" -->
+								<!-- 													class="d-block w-100" alt="..."> -->
+								<!-- 											</div>									 -->
+								<!-- 									</div> -->
+								<!-- 									<div class="col-sm-8" style="position: relative; background-color:blue;"> -->
+								<!-- 											<div class="control_bottom"  style="background-color: red;"> -->
+								<!-- 												<span class="price">Price: 99$</span> -->
+								<!-- 												<a th:href="@{/course/ecommerce_java}" -->
+								<!-- 													class="btn btn-primary">View detail</a> -->
+								<!-- 											</div>									 -->
+								<!-- 									</div> -->
+								<!-- 								</div> -->
+
+
+							</div>
+						</div>
+
+						<div class="col-sm-6">
+							<!--background-color: #44B78B;-->
+							<div class="border_block_course_main"
+								style="width: 100%; height: 100%;">
+								<div class="row">
+									<div class="col-sm-12">
+										<div
+											style="width: 100%; padding-bottom: 15px; text-align: center;">
+											<span style="font-size: 22px; font-weight: bold;">
+												Oracle Certified Professional Java SE 17 (1z0-829) </span>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="row">
+									<div class="col-sm-4">
+										<div>
+											<img th:src="@{/images/OCPJSE17.jpg}" class="d-block w-100"
+												alt="...">
+										</div>
+									</div>
+
+									<div class="col-sm-8">
+										<div style="padding-right: 10px;">
+											<div style="padding-bottom: 5px;">
+
+												<ul style="padding-bottom: 0;">
+													<li><i class="fa fa-check-circle style_icon_check"></i>
+														Real Oracle 1z0-829 Exam</li>
+													<li><i class="fa fa-check-circle style_icon_check"></i>
+														50 question</li>
+													<li><i class="fa fa-check-circle style_icon_check"></i>
+														Download PDF file</li>
+												</ul>
+											</div>
+
+											<div style="text-align: right;">
+<!-- 												<span class="price">Price: 39$</span> <a -->
+<!-- 													th:href="@{/course/downloadFile?filename=1z0829}" -->
+<!-- 													class="btn btn-primary">Free dowload</a> <a -->
+<!-- 													th:href="@{/payment/checkout/course/1z0-829?discountCode=xxxx}" -->
+<!-- 													class="btn btn-primary">Buy full PDF</a> -->
+											</div>
+										</div>
+
+									</div>
+
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+				<!--
+    <div class="carousel-item">
+  		<div class="row">
+			  <div class="col-sm-6" style="background-color: #6db33f; height: 200px;">
+				  x1
+			  </div>
+			  
+			  <div class="col-sm-6" style="background-color: #44B78B; height: 200px;">x2</div>
+		</div>      
+    </div>-->
+
+			</div>
+			<!--
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>-->
+		</div>
+		<!-- end -->
+
+
+
+		<div class="border_block_course_level_1">
+			<div class="border_block_course">
+
+				<div style="padding-top: 20px;">
+					<div class="row">
+						<div class="col-md-6">
+							<ul style="float: left; padding-right: 20px;">
+								<li><i class="fa fa-check-circle style_icon_check"></i>
+									Short concept</li>
+								<li><i class="fa fa-check-circle style_icon_check"></i> Use
+									why and when for each topic</li>
+							</ul>
+							<ul style="float: left;">
+								<li><i class="fa fa-check-circle style_icon_check"></i> 200
+									quiz support</li>
+								<li><i class="fa fa-check-circle style_icon_check"></i>
+									Price 9.9$</li>
+							</ul>
+						</div>
+						<div class="col-md-6" style="text-align: right;">
+							<a th:href="@{/course/downloadFile?filename=1z0829}"
+								class="btn btn-primary">Free dowload</a> <a
+								th:href="@{/payment/checkout/course/1z0-829?discountCode=xxxx}"
+								class="btn btn-primary">Buy full PDF</a>
+						</div>
+					</div>
+
+				</div>
+				<div class="border_separate" style="margin-bottom: 20px;"></div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<div>
+							<div style="display: flex;">
+								<!-- 
+						<img th:src="@{/images/icons8-java-48.png}" class="d-block w-48 h-48" alt="...">
+						-->
+								<h4 id="core_img" style="display: flex;">Java core</h4>
+							</div>
+							<div>
+
+								<div>
+
+									<a class="btn btn-primary item-data-topic"
+										data-bs-toggle="collapse" href="#collapseExample"
+										role="button" aria-expanded="false"
+										aria-controls="collapseExample"
+										style="width: 100%; text-align: left;"> <i
+										class="caret-icon fa fa-caret-right"
+										style="font-size: 20px; color: black;"></i> OOP
+									</a>
+								</div>
+								<div class="collapse" id="collapseExample"
+									style="margin-bottom: 2px;">
+									<div class="card card-body">
+										<a href="#">Noi dung OOP 1</a> <a href="#">Noi dung OOP 2</a>
+										<a href="#">Noi dung OOP 3</a>
+									</div>
+								</div>
+
+
+								<div style="text-align: left; margin-top: 2px;">
+									<a class="btn btn-primary item-data-topic"
+										data-bs-toggle="collapse" href="#collapseLamda" role="button"
+										aria-expanded="false" aria-controls="collapseLamda"
+										style="width: 100%; text-align: left;"> <i
+										class="caret-icon fa fa-caret-right"
+										style="font-size: 20px; color: black;"></i> Lamda
+									</a>
+								</div>
+								<div class="collapse" id="collapseLamda"
+									style="margin-bottom: 2px;">
+									<div class="card card-body">
+										<a href="#">Noi dung Lamda 1</a> <a href="#">Noi dung
+											Lamda 2</a>
+									</div>
+								</div>
+
+
+								<div style="text-align: left; margin-top: 2px;">
+									<a class="btn btn-primary item-data-topic"
+										data-bs-toggle="collapse" href="#collapseLamda" role="button"
+										aria-expanded="false" aria-controls="collapseLamda"
+										style="width: 100%; text-align: left;"> <i
+										class="caret-icon fa fa-caret-right"
+										style="font-size: 20px; color: black;"></i> Stream
+									</a>
+								</div>
+								<div class="collapse" id="collapseLamda"
+									style="margin-bottom: 2px;">
+									<div class="card card-body">
+										<a href="#">Noi dung Lamda 1</a> <a href="#">Noi dung
+											Lamda 2</a>
+									</div>
+								</div>
+
+								<div style="text-align: left; margin-top: 2px;">
+									<a class="btn btn-primary item-data-topic"
+										data-bs-toggle="collapse" href="#collapseLamda" role="button"
+										aria-expanded="false" aria-controls="collapseLamda"
+										style="width: 100%; text-align: left;"> <i
+										class="caret-icon fa fa-caret-right"
+										style="font-size: 20px; color: black;"></i> Generic
+									</a>
+								</div>
+								<div class="collapse" id="collapseLamda"
+									style="margin-bottom: 2px;">
+									<div class="card card-body">
+										<a href="#">Noi dung Lamda 1</a> <a href="#">Noi dung
+											Lamda 2</a>
+									</div>
+								</div>
+
+								<div style="text-align: left; margin-top: 2px;">
+									<a class="btn btn-primary item-data-topic"
+										data-bs-toggle="collapse" href="#collapseLamda" role="button"
+										aria-expanded="false" aria-controls="collapseLamda"
+										style="width: 100%; text-align: left;"> <i
+										class="caret-icon fa fa-caret-right"
+										style="font-size: 20px; color: black;"></i> Collection
+									</a>
+								</div>
+								<div class="collapse" id="collapseLamda"
+									style="margin-bottom: 2px;">
+									<div class="card card-body">
+										<a href="#">Noi dung Lamda 1</a> <a href="#">Noi dung
+											Lamda 2</a>
+									</div>
+								</div>
+
+								<div style="text-align: left; margin-top: 2px;">
+									<a class="btn btn-primary item-data-topic"
+										data-bs-toggle="collapse" href="#collapseLamda" role="button"
+										aria-expanded="false" aria-controls="collapseLamda"
+										style="width: 100%; text-align: left;"> <i
+										class="caret-icon fa fa-caret-right"
+										style="font-size: 20px; color: black;"></i> Thread
+									</a>
+								</div>
+								<div class="collapse" id="collapseLamda"
+									style="margin-bottom: 2px;">
+									<div class="card card-body">
+										<a href="#">Noi dung Lamda 1</a> <a href="#">Noi dung
+											Lamda 2</a>
+									</div>
+								</div>
+
+
+								<div style="text-align: left; margin-top: 2px;">
+									<a class="btn btn-primary item-data-topic"
+										data-bs-toggle="collapse" href="#collapseException"
+										role="button" aria-expanded="false"
+										aria-controls="collapseException"
+										style="width: 100%; text-align: left;"> <i
+										class="caret-icon fa fa-caret-right"
+										style="font-size: 20px; color: black;"></i> Exception
+									</a>
+								</div>
+								<div class="collapse" id="collapseException"
+									style="margin-bottom: 2px;">
+									<div class="card card-body">
+										<a href="#">Noi dung Exception 1</a> <a href="#">Noi dung
+											Exception 2</a>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+					<div class="col-md-4">
+						<div>
+							<div style="display: flex;">
+								<!-- 
+						<img th:src="@{/images/icons8-java-48.png}" class="d-block w-48 h-48" alt="...">
+						-->
+								<h4 id="quiz_img" style="display: flex;">Quiz</h4>
+							</div>
+
+							<div>
+
+								<div>
+
+									<a class="btn btn-primary item-data-topic"
+										data-bs-toggle="collapse" href="#collapseExample"
+										role="button" aria-expanded="false"
+										aria-controls="collapseExample"
+										style="width: 100%; text-align: left;"> <i
+										class="caret-icon fa fa-caret-right"
+										style="font-size: 20px; color: black;"></i> OOP 200 question
+									</a>
+								</div>
+								<div class="collapse" id="collapseExample"
+									style="margin-bottom: 2px;">
+									<div class="card card-body">
+										<a href="#">Noi dung OOP 1</a> <a href="#">Noi dung OOP 2</a>
+										<a href="#">Noi dung OOP 3</a>
+									</div>
+								</div>
+
+
+								<div style="text-align: left; margin-top: 2px;">
+									<a class="btn btn-primary item-data-topic"
+										data-bs-toggle="collapse" href="#collapseLamda" role="button"
+										aria-expanded="false" aria-controls="collapseLamda"
+										style="width: 100%; text-align: left;"> <i
+										class="caret-icon fa fa-caret-right"
+										style="font-size: 20px; color: black;"></i> Lamda 300 question
+									</a>
+								</div>
+								<div class="collapse" id="collapseLamda"
+									style="margin-bottom: 2px;">
+									<div class="card card-body">
+										<a href="#">Noi dung Lamda 1</a> <a href="#">Noi dung
+											Lamda 2</a>
+									</div>
+								</div>
+
+
+								<div style="text-align: left; margin-top: 2px;">
+									<a class="btn btn-primary item-data-topic"
+										data-bs-toggle="collapse" href="#collapseException"
+										role="button" aria-expanded="false"
+										aria-controls="collapseException"
+										style="width: 100%; text-align: left;"> <i
+										class="caret-icon fa fa-caret-right"
+										style="font-size: 20px; color: black;"></i> Stream 100
+										question
+									</a>
+								</div>
+								<div class="collapse" id="collapseException"
+									style="margin-bottom: 2px;">
+									<div class="card card-body">
+										<a href="#">Noi dung Exception 1</a> <a href="#">Noi dung
+											Exception 2</a>
+									</div>
+								</div>
+
+
+								<div style="text-align: left; margin-top: 2px;">
+									<a class="btn btn-primary item-data-topic"
+										data-bs-toggle="collapse" href="#collapseException"
+										role="button" aria-expanded="false"
+										aria-controls="collapseException"
+										style="width: 100%; text-align: left;"> <i
+										class="caret-icon fa fa-caret-right"
+										style="font-size: 20px; color: black;"></i> Generic 100
+										question
+									</a>
+								</div>
+								<div class="collapse" id="collapseException"
+									style="margin-bottom: 2px;">
+									<div class="card card-body">
+										<a href="#">Noi dung Exception 1</a> <a href="#">Noi dung
+											Exception 2</a>
+									</div>
+								</div>
+
+								<div style="text-align: left; margin-top: 2px;">
+									<a class="btn btn-primary item-data-topic"
+										data-bs-toggle="collapse" href="#collapseException"
+										role="button" aria-expanded="false"
+										aria-controls="collapseException"
+										style="width: 100%; text-align: left;"> <i
+										class="caret-icon fa fa-caret-right"
+										style="font-size: 20px; color: black;"></i> Collection 100
+										question
+									</a>
+								</div>
+								<div class="collapse" id="collapseException"
+									style="margin-bottom: 2px;">
+									<div class="card card-body">
+										<a href="#">Noi dung Exception 1</a> <a href="#">Noi dung
+											Exception 2</a>
+									</div>
+								</div>
+
+
+								<div style="text-align: left; margin-top: 2px;">
+									<a class="btn btn-primary item-data-topic"
+										data-bs-toggle="collapse" href="#collapseException"
+										role="button" aria-expanded="false"
+										aria-controls="collapseException"
+										style="width: 100%; text-align: left;"> <i
+										class="caret-icon fa fa-caret-right"
+										style="font-size: 20px; color: black;"></i> Thread 100
+										question
+									</a>
+								</div>
+								<div class="collapse" id="collapseException"
+									style="margin-bottom: 2px;">
+									<div class="card card-body">
+										<a href="#">Noi dung Exception 1</a> <a href="#">Noi dung
+											Exception 2</a>
+									</div>
+								</div>
+
+								<div style="text-align: left; margin-top: 2px;">
+									<a class="btn btn-primary item-data-topic"
+										data-bs-toggle="collapse" href="#collapseException"
+										role="button" aria-expanded="false"
+										aria-controls="collapseException"
+										style="width: 100%; text-align: left;"> <i
+										class="caret-icon fa fa-caret-right"
+										style="font-size: 20px; color: black;"></i> Exception 100
+										question
+									</a>
+								</div>
+								<div class="collapse" id="collapseException"
+									style="margin-bottom: 2px;">
+									<div class="card card-body">
+										<a href="#">Noi dung Exception 1</a> <a href="#">Noi dung
+											Exception 2</a>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-md-4">
+
+						<div>
+
+							<div style="display: flex;">
+								<!-- 
+						<img th:src="@{/images/icons8-java-48.png}" class="d-block w-48 h-48" alt="...">
+						-->
+								<h4 id="advance_img" style="display: flex;">Advance topics</h4>
+							</div>
+
+							<div>
+								<div>
+									<a class="btn btn-primary item-data-topic"
+										data-bs-toggle="collapse" href="#collapseJson" role="button"
+										aria-expanded="false" aria-controls="collapseJson"
+										style="width: 100%; text-align: left;"> <i
+										class="caret-icon fa fa-caret-right"
+										style="font-size: 20px; color: black;"></i> SOLID sprinciples
+									</a>
+								</div>
+								<div class="collapse" id="collapseJson"
+									style="margin-bottom: 2px;">
+									<div class="card card-body">
+										<a href="#">Json xxx 1</a> <a href="#">Json xxx 2</a> <a
+											href="#">Json xxx 3</a>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Spring data, security, restfull: start -->
+		<div class="border_block_course_level_1">
+			<div class="border_block_course">
+
+				<div style="padding-top: 20px;">
+					<div class="row">
+						<div class="col-md-6">
+							<ul style="float: left; padding-right: 20px;">
+								<li><i class="fa fa-check-circle style_icon_check"></i>
+									Short concept</li>
+								<li><i class="fa fa-check-circle style_icon_check"></i> Use
+									why and when for each topic</li>
+							</ul>
+							<ul style="float: left;">
+								<li><i class="fa fa-check-circle style_icon_check"></i> 200
+									quiz support</li>
+								<li><i class="fa fa-check-circle style_icon_check"></i>
+									Price 99$</li>
+							</ul>
+						</div>
+						<div class="col-md-6" style="text-align: right;">
+							<a
+								th:href="@{/payment/checkout/course/1z0-829?discountCode=xxxx}"
+								class="btn btn-primary">Buy all</a>
+						</div>
+					</div>
+
+				</div>
+				<div class="border_separate" style="margin-bottom: 20px;"></div>
+
+				<div class="row" style="padding-top: 0px;">
+					<div class="col-md-4">
+						<div class="border_block_course">
+							<div class="border_block_course_img">
+								<img height="150" th:src="@{/images/spring-security.jpg}"
+									class="d-block w-100" alt="...">
+							</div>
+							<div class="border_separate"></div>
+							<div class="description_block_course">
+								<ul>
+									<li><i class="fa fa-check-circle style_icon_check"></i>
+										Download full source code</li>
+									<li><i class="fa fa-check-circle style_icon_check"></i>
+										Full topic and detail</li>
+									<li><i class="fa fa-check-circle style_icon_check"></i>
+										Real example</li>
+								</ul>
+							</div>
+							<div style="text-align: right;">
+								<span>Price: 39$</span> <a th:href="@{/course/ecommerce_java}"
+									class="btn btn-primary">View detail</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class=" border_block_course">
+							<!--					<div class="col">-->
+							<div class="border_block_course_img">
+								<img height="150" th:src="@{/images/Spring-rest.png}"
+									class="d-block w-100" alt="...">
+							</div>
+							<div class="border_separate"></div>
+							<div class="description_block_course">
+								<ul>
+									<li><i class="fa fa-check-circle style_icon_check"></i>
+										Download full source code</li>
+									<li><i class="fa fa-check-circle style_icon_check"></i>
+										Full topic and detail</li>
+									<li><i class="fa fa-check-circle style_icon_check"></i>
+										Real example</li>
+								</ul>
+
+							</div>
+							<div style="text-align: right;">
+								<span>Price: 39$</span> <a th:href="@{/course/ecommerce_java}"
+									class="btn btn-primary">View detail</a>
+							</div>
+							<!--					</div>-->
+
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="border_block_course">
+							<div class="border_block_course_img">
+								<img height="150" th:src="@{/images/spring_data.png}"
+									class="d-block w-100" alt="...">
+							</div>
+							<div class="border_separate"></div>
+							<div class="description_block_course">
+								<ul>
+									<li><i class="fa fa-check-circle style_icon_check"></i>
+										Download full source code</li>
+									<li><i class="fa fa-check-circle style_icon_check"></i>
+										Full topic and detail</li>
+									<li><i class="fa fa-check-circle style_icon_check"></i>
+										Real example</li>
+								</ul>
+							</div>
+							<div style="text-align: right;">
+								<span>Price: 39$</span> <a th:href="@{/course/ecommerce_java}"
+									class="btn btn-primary">View detail</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Spring data, security, restfull: stop -->
+
+		<!-- topic: start -->
+		<div class="border_block_course_level_1">
+			<div class="border_block_course">
+
+				<div style="padding-top: 20px; padding-bottom: 20px;">
+					<div class="row">
+						<div class="col-md-6">
+							<h4>Helps you save time searching for only $9.9</h4>
+						</div>
+						<div class="col-md-6" style="text-align: right;">
+							<a
+								th:href="@{/payment/checkout/course/1z0-829?discountCode=xxxx}"
+								class="btn btn-primary">Buy full code</a>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="border_separate" style="margin-bottom: 20px;"></div>
+
+				<div class="row">
+
+					<div class="col-sm-4">
+						<div class="topic_common">
+							<h4>Upload and download file</h4>
+							<p>
+								Upload single and multiple file to server, download file. Use
+								spring boot 3 & java 17+ <a href="#">demo</a>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="topic_common">
+							<h4>Jasper report</h4>
+							<p>
+								Design document with header, body, footer then export data
+								report to pdf. Use spring boot 3 & java 17+ <a href="#">demo</a>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="topic_common">
+							<h4>Load content by ajax</h4>
+							<p>
+								Use javascript and jquery. Use spring boot 3 & java 17+ <a
+									href="#">demo</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+
+					<div class="col-sm-4">
+						<div class="topic_common">
+							<h4>Paging backend use pring data</h4>
+							<p>
+								Use spring boot 3 & java 17+ <a href="#">demo</a>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="topic_common">
+							<h4>Paging front end use jquery</h4>
+							<p>
+								Use spring boot 3 & java 17+ <a href="#">demo</a>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="topic_common">
+							<h4>Layout master page use thymleft</h4>
+							<p>
+								Layout heade, footer and body. Use spring boot 3 & java 17+ <a
+									href="#">demo</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+
+					<div class="col-sm-4">
+						<div class="topic_common">
+							<h4>Slide single and multiple item</h4>
+							<p>
+								Use spring boot 3 & java 17+, boostrap 5 <a href="#">demo</a>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="topic_common">
+							<h4>Login, logout (authenticate)</h4>
+							<p>
+								Use spring boot 3, spring security & java 17+, mysql <a href="#">demo</a>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="topic_common">
+							<h4>Oauth 2 (facebook, google)</h4>
+							<p>
+								Use spring boot 3 & java 17+ <a href="#">demo</a>
+							</p>
+						</div>
+					</div>
+
+
+				</div>
+
+			</div>
+		</div>
+		<!-- topic: end-->
+
+	</div>
+
+
+
+
+
+
+	<!--
+	<div class="container" style="padding-top: 30px">
+		<div>
+			<h4>Json and Json</h4>
+		</div>
+
+		<div>
+			<div>
+				<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseJson" role="button"
+					aria-expanded="false" aria-controls="collapseJson" style="width: 100%; text-align: left;">
+					<i class="caret-icon fa fa-caret-right" style="font-size:20px;color: black;"></i>
+					Json xxx
+				</a>
+			</div>
+			<div class="collapse" id="collapseJson" style="margin-bottom: 2px;">
+				<div class="card card-body">
+					<a href="#">Json xxx 1</a>
+					<a href="#">Json xxx 2</a>
+					<a href="#">Json xxx 3</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!--
+	<div class="container" style="padding-top: 30px">
+		<div>
+			<h4>Junit 5</h4>
+		</div>
+
+		<div>
+			<div>
+				<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseJunit" role="button"
+					aria-expanded="false" aria-controls="collapseJunit" style="width: 100%; text-align: left;">
+					<i class="caret-icon fa fa-caret-right" style="font-size:20px;color: black;"></i>
+					Json xxx
+				</a>
+			</div>
+			<div class="collapse" id="collapseJunit" style="margin-bottom: 2px;">
+				<div class="card card-body">
+					<a href="#">Json xxx 1</a>
+					<a href="#">Json xxx 2</a>
+					<a href="#">Json xxx 3</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	-->
+	</div>
+</body>
+
+</html>

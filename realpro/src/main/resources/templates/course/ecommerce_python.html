@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html  layout:decorate="~{fragments/layout}">
+<head>
+<title>Page Title</title>
+
+<style>
+	
+	.course-pro {
+		padding-bottom: 25px;
+	}
+	
+	.block-course {
+		padding-bottom: 30px;
+	}
+	
+</style>
+
+</head>
+<body>
+<div layout:fragment="content">	
+	<div class="container" style="background-color: aqua;">
+		
+  		<div class="container" >
+			  <div class="row block-course">
+				  <div class="col-sm-8">
+					 <p style="font-weight: bold; font-size: 16px;"> The e-commerce project class </p>
+					 <div>
+						 <p>Day là lớp học tốt nhất thế giới hiện nay</p>
+						 <p>Day là lớp học tốt nhất thế giới hiện nay</p>
+						 <p>Day là lớp học tốt nhất thế giới hiện nay</p>
+					 </div> 
+				  </div>
+				  <div class="col-sm-4">
+					  <div>
+						  <a th:href="@{/payment/checkout/course/ecommerce_python?discountCode=xxxx}" style="width: 100%;" class="btn btn-info btn-outline-primary">
+							  Access for 299$
+						  </a>
+					  </div>
+				  </div>		  
+			  </div>
+			  <div class="row block-course"> 
+				  <div class="col-sm-6">
+					  <p>1. giới thiệu công nghệ trong project</p>
+				  </div>
+				  <div class="col-sm-6">
+					  <p>2. cách chạy project</p>
+				  </div>
+				  
+			  </div>
+			  <div class="row block-course">
+				  
+				  <div class="col-sm-6">
+					  <p>3. cấu tạo layout</p>
+				  </div>
+				  <div class="col-sm-6">
+					  <p>4. cấu tạo và kiến trúc backend</p>
+				  </div>				   
+			  </div>			  
+		</div>	
+		
+	</div>	
+</div>
+</body>
+</html>
